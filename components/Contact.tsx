@@ -2,6 +2,7 @@
 
 import { useState } from "react";
 import { Phone, Mail, Send, CheckCircle } from "lucide-react";
+import { motion } from "framer-motion";
 
 export default function Contact() {
   const [form, setForm] = useState({
@@ -44,7 +45,13 @@ export default function Contact() {
   return (
     <section id="contact" className="py-24 px-4 sm:px-6 lg:px-8 bg-[#0b0f1a]">
       <div className="max-w-7xl mx-auto">
-        <div className="text-center mb-14">
+        <motion.div
+          initial={{ opacity: 0, y: 24 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.6, ease: "easeOut" }}
+          className="text-center mb-14"
+        >
           <p className="text-orange-500 text-sm font-semibold uppercase tracking-widest mb-3">
             Contact
           </p>
@@ -55,11 +62,17 @@ export default function Contact() {
             Fill out the form below or reach out directly. We&apos;ll get back
             to you within 24 hours.
           </p>
-        </div>
+        </motion.div>
 
         <div className="grid grid-cols-1 lg:grid-cols-5 gap-10 items-start max-w-5xl mx-auto">
           {/* Contact info */}
-          <div className="lg:col-span-2 flex flex-col gap-6">
+          <motion.div
+            initial={{ opacity: 0, x: -20 }}
+            whileInView={{ opacity: 1, x: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.6, delay: 0.1, ease: "easeOut" }}
+            className="lg:col-span-2 flex flex-col gap-6"
+          >
             <div className="p-6 rounded-2xl bg-white/3 border border-white/5">
               <h3 className="text-lg font-bold mb-4">Reach Out Directly</h3>
               <div className="flex flex-col gap-4">
@@ -101,10 +114,16 @@ export default function Contact() {
                 fastest response.
               </p>
             </div>
-          </div>
+          </motion.div>
 
           {/* Form */}
-          <div className="lg:col-span-3">
+          <motion.div
+            initial={{ opacity: 0, x: 20 }}
+            whileInView={{ opacity: 1, x: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.6, delay: 0.2, ease: "easeOut" }}
+            className="lg:col-span-3"
+          >
             {submitted ? (
               <div className="rounded-2xl bg-white/3 border border-white/5 p-10 flex flex-col items-center text-center gap-4">
                 <div className="w-16 h-16 rounded-full bg-green-500/10 flex items-center justify-center">
@@ -247,7 +266,7 @@ export default function Contact() {
                 </p>
               </form>
             )}
-          </div>
+          </motion.div>
         </div>
       </div>
     </section>

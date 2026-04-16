@@ -1,6 +1,7 @@
 "use client";
 
 import { Check, Zap, Star, Rocket } from "lucide-react";
+import { motion } from "framer-motion";
 
 const plans = [
   {
@@ -106,7 +107,13 @@ export default function Services() {
   return (
     <section id="services" className="py-24 px-4 sm:px-6 lg:px-8 bg-[#0b0f1a]">
       <div className="max-w-7xl mx-auto">
-        <div className="text-center mb-14">
+        <motion.div
+          initial={{ opacity: 0, y: 24 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.6, ease: "easeOut" }}
+          className="text-center mb-14"
+        >
           <p className="text-orange-500 text-sm font-semibold uppercase tracking-widest mb-3">
             Packages & Pricing
           </p>
@@ -117,15 +124,19 @@ export default function Services() {
             No hidden fees. No hourly surprises. Pick the package that fits your
             business and budget.
           </p>
-        </div>
+        </motion.div>
 
         <div className="grid grid-cols-1 md:grid-cols-3 gap-6 items-start">
-          {plans.map((plan) => {
+          {plans.map((plan, i) => {
             const c = colorMap[plan.color as keyof typeof colorMap];
             const Icon = plan.icon;
             return (
-              <div
+              <motion.div
                 key={plan.name}
+                initial={{ opacity: 0, y: 30 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                transition={{ duration: 0.5, delay: i * 0.1, ease: "easeOut" }}
                 className={`relative rounded-2xl border bg-white/3 p-8 flex flex-col gap-6 transition-all ${c.border} ${
                   plan.popular ? "shadow-2xl shadow-orange-500/10 scale-[1.02]" : ""
                 }`}
@@ -172,7 +183,7 @@ export default function Services() {
                 >
                   {plan.cta}
                 </a>
-              </div>
+              </motion.div>
             );
           })}
         </div>

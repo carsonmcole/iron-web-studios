@@ -1,6 +1,7 @@
 "use client";
 
 import { ExternalLink, Clock } from "lucide-react";
+import { motion } from "framer-motion";
 
 const placeholders = [
   {
@@ -57,7 +58,13 @@ export default function Portfolio() {
   return (
     <section id="portfolio" className="py-24 px-4 sm:px-6 lg:px-8 bg-[#0d1220]">
       <div className="max-w-7xl mx-auto">
-        <div className="text-center mb-14">
+        <motion.div
+          initial={{ opacity: 0, y: 24 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.6, ease: "easeOut" }}
+          className="text-center mb-14"
+        >
           <p className="text-orange-500 text-sm font-semibold uppercase tracking-widest mb-3">
             Portfolio
           </p>
@@ -69,12 +76,16 @@ export default function Portfolio() {
             soon — or be one of the first clients and we&apos;ll showcase your
             site here.
           </p>
-        </div>
+        </motion.div>
 
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
-          {placeholders.map((item) => (
-            <div
+          {placeholders.map((item, i) => (
+            <motion.div
               key={item.label}
+              initial={{ opacity: 0, scale: 0.95 }}
+              whileInView={{ opacity: 1, scale: 1 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.4, delay: i * 0.07, ease: "easeOut" }}
               className={`group relative rounded-2xl border ${item.border} overflow-hidden bg-gradient-to-br ${item.bg} aspect-video flex flex-col items-center justify-center gap-3`}
             >
               {/* Mock browser chrome */}
@@ -96,11 +107,17 @@ export default function Portfolio() {
                   {item.tag}
                 </span>
               </div>
-            </div>
+            </motion.div>
           ))}
         </div>
 
-        <div className="mt-10 p-6 rounded-2xl bg-orange-500/5 border border-orange-500/20 text-center">
+        <motion.div
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.5, delay: 0.2 }}
+          className="mt-10 p-6 rounded-2xl bg-orange-500/5 border border-orange-500/20 text-center"
+        >
           <p className="text-orange-300 font-semibold mb-1">
             Be an Early Client
           </p>
@@ -111,7 +128,7 @@ export default function Portfolio() {
               Get in touch.
             </a>
           </p>
-        </div>
+        </motion.div>
       </div>
     </section>
   );

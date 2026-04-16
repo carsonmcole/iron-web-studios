@@ -1,5 +1,7 @@
 "use client";
 
+import { motion } from "framer-motion";
+
 const steps = [
   {
     num: "01",
@@ -27,7 +29,13 @@ export default function Process() {
   return (
     <section id="process" className="py-24 px-4 sm:px-6 lg:px-8 bg-[#0b0f1a]">
       <div className="max-w-7xl mx-auto">
-        <div className="text-center mb-14">
+        <motion.div
+          initial={{ opacity: 0, y: 24 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.6, ease: "easeOut" }}
+          className="text-center mb-14"
+        >
           <p className="text-orange-500 text-sm font-semibold uppercase tracking-widest mb-3">
             How It Works
           </p>
@@ -38,7 +46,7 @@ export default function Process() {
             We keep the process dead simple so you can focus on running your
             business while we handle the website.
           </p>
-        </div>
+        </motion.div>
 
         <div className="relative">
           {/* Connecting line */}
@@ -46,7 +54,14 @@ export default function Process() {
 
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8">
             {steps.map((step, i) => (
-              <div key={step.num} className="relative flex flex-col items-center text-center">
+              <motion.div
+                key={step.num}
+                initial={{ opacity: 0, y: 30 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                transition={{ duration: 0.5, delay: i * 0.1, ease: "easeOut" }}
+                className="relative flex flex-col items-center text-center"
+              >
                 {/* Step number circle */}
                 <div className="relative z-10 w-24 h-24 rounded-full bg-[#0b0f1a] border-2 border-orange-500/40 flex items-center justify-center mb-6">
                   <div className="w-16 h-16 rounded-full bg-orange-500/10 flex items-center justify-center">
@@ -57,19 +72,25 @@ export default function Process() {
                 </div>
                 <h3 className="text-lg font-bold mb-2">{step.title}</h3>
                 <p className="text-gray-400 text-sm leading-relaxed">{step.desc}</p>
-              </div>
+              </motion.div>
             ))}
           </div>
         </div>
 
-        <div className="mt-14 text-center">
+        <motion.div
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.5, delay: 0.4, ease: "easeOut" }}
+          className="mt-14 text-center"
+        >
           <a
             href="#contact"
             className="inline-flex items-center justify-center gap-2 px-8 py-4 bg-orange-500 hover:bg-orange-400 text-white font-bold rounded-xl transition-all hover:scale-105 hover:shadow-lg hover:shadow-orange-500/25"
           >
             Start with a Free Consultation
           </a>
-        </div>
+        </motion.div>
       </div>
     </section>
   );

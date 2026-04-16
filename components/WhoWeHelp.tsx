@@ -1,5 +1,6 @@
 "use client";
 
+import { motion } from "framer-motion";
 import {
   Scissors,
   Wrench,
@@ -34,7 +35,13 @@ export default function WhoWeHelp() {
   return (
     <section id="who-we-help" className="py-24 px-4 sm:px-6 lg:px-8 bg-[#0d1220]">
       <div className="max-w-7xl mx-auto">
-        <div className="text-center mb-14">
+        <motion.div
+          initial={{ opacity: 0, y: 24 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.6, ease: "easeOut" }}
+          className="text-center mb-14"
+        >
           <p className="text-orange-500 text-sm font-semibold uppercase tracking-widest mb-3">
             Who We Help
           </p>
@@ -45,12 +52,16 @@ export default function WhoWeHelp() {
             If you run a local service business and need to look professional
             online, you&apos;re exactly who we built this for.
           </p>
-        </div>
+        </motion.div>
 
         <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-6 gap-4">
-          {businesses.map(({ icon: Icon, label }) => (
-            <div
+          {businesses.map(({ icon: Icon, label }, i) => (
+            <motion.div
               key={label}
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.4, delay: i * 0.05, ease: "easeOut" }}
               className="group flex flex-col items-center gap-3 p-5 rounded-xl bg-white/3 border border-white/5 hover:border-orange-500/30 hover:bg-orange-500/5 transition-all cursor-default"
             >
               <div className="w-12 h-12 rounded-lg bg-orange-500/10 flex items-center justify-center group-hover:bg-orange-500/20 transition-colors">
@@ -59,17 +70,23 @@ export default function WhoWeHelp() {
               <span className="text-sm text-gray-300 text-center font-medium">
                 {label}
               </span>
-            </div>
+            </motion.div>
           ))}
         </div>
 
-        <p className="text-center text-gray-500 text-sm mt-8">
+        <motion.p
+          initial={{ opacity: 0 }}
+          whileInView={{ opacity: 1 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.6, delay: 0.3 }}
+          className="text-center text-gray-500 text-sm mt-8"
+        >
           Don&apos;t see your industry?{" "}
           <a href="#contact" className="text-orange-400 hover:text-orange-300 underline">
             Reach out anyway
           </a>{" "}
           — we&apos;ve built for all kinds of local businesses.
-        </p>
+        </motion.p>
       </div>
     </section>
   );
