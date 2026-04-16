@@ -39,3 +39,6 @@ yarn-error.log*
 # typescript
 *.tsbuildinfo
 next-env.d.ts
+
+# Lead submissions (keep out of git — lives on persistent disk in production)
+data/submissions.json
