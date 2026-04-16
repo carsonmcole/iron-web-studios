@@ -23,6 +23,14 @@ export const metadata: Metadata = {
     description:
       "Fast, modern, affordable websites built for small businesses that need to stand out online.",
     type: "website",
+    images: [
+      {
+        url: "/og-image.png",
+        width: 1200,
+        height: 630,
+        alt: "Iron Web Studios",
+      },
+    ],
   },
 };
 
