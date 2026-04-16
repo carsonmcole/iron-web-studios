@@ -108,8 +108,8 @@ export default function Services() {
     <section id="services" className="py-24 px-4 sm:px-6 lg:px-8 bg-[#0b0f1a]">
       <div className="max-w-7xl mx-auto">
         <motion.div
-          initial={{ opacity: 0, y: 24 }}
-          whileInView={{ opacity: 1, y: 0 }}
+          initial={{ opacity: 0 }}
+          whileInView={{ opacity: 1 }}
           viewport={{ once: true }}
           transition={{ duration: 0.6, ease: "easeOut" }}
           className="text-center mb-14"
@@ -133,8 +133,8 @@ export default function Services() {
             return (
               <motion.div
                 key={plan.name}
-                initial={{ opacity: 0, y: 30 }}
-                whileInView={{ opacity: 1, y: 0 }}
+                initial={{ opacity: 0 }}
+                whileInView={{ opacity: 1 }}
                 viewport={{ once: true }}
                 transition={{ duration: 0.5, delay: i * 0.1, ease: "easeOut" }}
                 className={`relative rounded-2xl border bg-white/3 p-8 flex flex-col gap-6 transition-all ${c.border} ${

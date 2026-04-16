@@ -48,8 +48,8 @@ export default function WhyUs() {
     <section id="why-us" className="py-24 px-4 sm:px-6 lg:px-8 bg-[#0d1220]">
       <div className="max-w-7xl mx-auto">
         <motion.div
-          initial={{ opacity: 0, y: 24 }}
-          whileInView={{ opacity: 1, y: 0 }}
+          initial={{ opacity: 0 }}
+          whileInView={{ opacity: 1 }}
           viewport={{ once: true }}
           transition={{ duration: 0.6, ease: "easeOut" }}
           className="text-center mb-14"
@@ -70,8 +70,8 @@ export default function WhyUs() {
           {reasons.map(({ icon: Icon, title, desc }, i) => (
             <motion.div
               key={title}
-              initial={{ opacity: 0, y: 24 }}
-              whileInView={{ opacity: 1, y: 0 }}
+              initial={{ opacity: 0 }}
+              whileInView={{ opacity: 1 }}
               viewport={{ once: true }}
               transition={{ duration: 0.5, delay: i * 0.08, ease: "easeOut" }}
               className="group p-6 rounded-2xl bg-white/3 border border-white/5 hover:border-orange-500/20 hover:bg-orange-500/3 transition-all"

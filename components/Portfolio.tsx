@@ -59,8 +59,8 @@ export default function Portfolio() {
     <section id="portfolio" className="py-24 px-4 sm:px-6 lg:px-8 bg-[#0d1220]">
       <div className="max-w-7xl mx-auto">
         <motion.div
-          initial={{ opacity: 0, y: 24 }}
-          whileInView={{ opacity: 1, y: 0 }}
+          initial={{ opacity: 0 }}
+          whileInView={{ opacity: 1 }}
           viewport={{ once: true }}
           transition={{ duration: 0.6, ease: "easeOut" }}
           className="text-center mb-14"
@@ -112,8 +112,8 @@ export default function Portfolio() {
         </div>
 
         <motion.div
-          initial={{ opacity: 0, y: 20 }}
-          whileInView={{ opacity: 1, y: 0 }}
+          initial={{ opacity: 0 }}
+          whileInView={{ opacity: 1 }}
           viewport={{ once: true }}
           transition={{ duration: 0.5, delay: 0.2 }}
           className="mt-10 p-6 rounded-2xl bg-orange-500/5 border border-orange-500/20 text-center"
