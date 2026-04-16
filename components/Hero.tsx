@@ -8,7 +8,7 @@ const bullets = [
   "Mobile-first, fast-loading websites",
   "Delivered in 7–14 days",
   "Built for local search (SEO)",
-  "No monthly fees on Starter & Pro",
+  "Email/SMS automation & AI chatbot options",
 ];
 
 export default function Hero() {
