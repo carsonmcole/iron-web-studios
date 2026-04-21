@@ -7,6 +7,6 @@ import { toggleFollowUp } from "@/lib/submissions";
 export async function toggleFollowUpAction(id: string) {
   const isAdmin = await verifyAdminSession();
   if (!isAdmin) throw new Error("Unauthorized");
-  toggleFollowUp(id);
+  await toggleFollowUp(id);
   revalidatePath("/admin");
 }

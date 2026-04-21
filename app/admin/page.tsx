@@ -8,7 +8,7 @@ export default async function AdminPage() {
   const isAdmin = await verifyAdminSession();
   if (!isAdmin) redirect("/admin/login");
 
-  const submissions = getSubmissions();
+  const submissions = await getSubmissions();
 
   const newCount = submissions.filter((s) => !s.followedUp).length;
 

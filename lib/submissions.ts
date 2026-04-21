@@ -1,5 +1,4 @@
-import fs from "fs";
-import path from "path";
+import { neon } from "@neondatabase/serverless";
 
 export type Submission = {
   id: string;
@@ -13,44 +12,68 @@ export type Submission = {
   followedUp: boolean;
 };
 
-const DATA_DIR = process.env.DATA_DIR ?? path.join(process.cwd(), "data");
-const FILE = path.join(DATA_DIR, "submissions.json");
-
-function readAll(): Submission[] {
-  if (!fs.existsSync(FILE)) return [];
-  try {
-    return JSON.parse(fs.readFileSync(FILE, "utf8")) as Submission[];
-  } catch {
-    return [];
-  }
+function sql() {
+  const url = process.env.DATABASE_URL;
+  if (!url) throw new Error("DATABASE_URL is not set");
+  return neon(url);
 }
 
-function writeAll(submissions: Submission[]) {
-  fs.mkdirSync(DATA_DIR, { recursive: true });
-  fs.writeFileSync(FILE, JSON.stringify(submissions, null, 2), "utf8");
+async function ensureTable() {
+  const db = sql();
+  await db`
+    CREATE TABLE IF NOT EXISTS submissions (
+      id TEXT PRIMARY KEY,
+      name TEXT NOT NULL,
+      business TEXT NOT NULL,
+      phone TEXT,
+      email TEXT NOT NULL,
+      package TEXT,
+      message TEXT,
+      submitted_at TIMESTAMPTZ NOT NULL DEFAULT NOW(),
+      followed_up BOOLEAN NOT NULL DEFAULT FALSE
+    )
+  `;
 }
 
-export function saveSubmission(data: Omit<Submission, "id" | "submittedAt" | "followedUp">): Submission {
-  const submissions = readAll();
-  const entry: Submission = {
-    ...data,
-    id: crypto.randomUUID(),
-    submittedAt: new Date().toISOString(),
-    followedUp: false,
+function rowToSubmission(row: Record<string, unknown>): Submission {
+  return {
+    id: row.id as string,
+    name: row.name as string,
+    business: row.business as string,
+    phone: (row.phone as string) ?? "",
+    email: row.email as string,
+    package: (row.package as string) ?? "",
+    message: (row.message as string) ?? "",
+    submittedAt: (row.submitted_at as Date).toISOString(),
+    followedUp: row.followed_up as boolean,
   };
-  submissions.unshift(entry);
-  writeAll(submissions);
-  return entry;
 }
 
-export function getSubmissions(): Submission[] {
-  return readAll();
+export async function saveSubmission(
+  data: Omit<Submission, "id" | "submittedAt" | "followedUp">
+): Promise<Submission> {
+  await ensureTable();
+  const db = sql();
+  const id = crypto.randomUUID();
+  const rows = await db`
+    INSERT INTO submissions (id, name, business, phone, email, package, message)
+    VALUES (${id}, ${data.name}, ${data.business}, ${data.phone ?? ""}, ${data.email}, ${data.package ?? ""}, ${data.message ?? ""})
+    RETURNING *
+  `;
+  return rowToSubmission(rows[0]);
 }
 
-export function toggleFollowUp(id: string): void {
-  const submissions = readAll();
-  const idx = submissions.findIndex((s) => s.id === id);
-  if (idx === -1) return;
-  submissions[idx].followedUp = !submissions[idx].followedUp;
-  writeAll(submissions);
+export async function getSubmissions(): Promise<Submission[]> {
+  await ensureTable();
+  const db = sql();
+  const rows = await db`SELECT * FROM submissions ORDER BY submitted_at DESC`;
+  return rows.map(rowToSubmission);
+}
+
+export async function toggleFollowUp(id: string): Promise<void> {
+  await ensureTable();
+  const db = sql();
+  await db`
+    UPDATE submissions SET followed_up = NOT followed_up WHERE id = ${id}
+  `;
 }

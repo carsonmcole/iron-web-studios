@@ -14,8 +14,7 @@ export async function POST(req: NextRequest) {
     return Response.json({ error: "Missing required fields" }, { status: 400 });
   }
 
-  // Save to local storage
-  saveSubmission({ name, business, phone, email, package: pkg, message });
+  await saveSubmission({ name, business, phone, email, package: pkg, message });
 
   // Send notification to owner
   await resend.emails.send({
