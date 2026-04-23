@@ -215,13 +215,13 @@ export default function Contact() {
                       Select a package...
                     </option>
                     <option value="starter" className="bg-[#0b0f1a]">
-                      Starter — $499 (One-Page Site)
+                      Starter — $299 (One-Page Site) [$49/mo]
                     </option>
                     <option value="professional" className="bg-[#0b0f1a]">
-                      Professional — $1,499 (Multi-Page Site)
+                      Professional — $799 (Multi-Page Site) [$99/mo]
                     </option>
                     <option value="premium" className="bg-[#0b0f1a]">
-                      Premium — $2,999 (AI-Powered Site)
+                      Premium — $1,499 (AI-Powered Site) [$199/mo]
                     </option>
                     <option value="custom" className="bg-[#0b0f1a]">
                       Not sure — let&apos;s talk
