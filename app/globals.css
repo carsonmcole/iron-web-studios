@@ -17,6 +17,10 @@ body {
   color: var(--foreground);
   font-family: var(--font-geist-sans), Arial, Helvetica, sans-serif;
   scroll-behavior: smooth;
+  /* Lock text to grayscale anti-aliasing so it doesn't re-rasterize (flicker)
+     when framer-motion tears down a fade's GPU compositing layer. */
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
 }
 
 html {
