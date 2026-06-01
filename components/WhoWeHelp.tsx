@@ -32,6 +32,16 @@ const businesses = [
   { icon: ShieldCheck, label: "Security / Cleaning" },
 ];
 
+/** Cohesive accent palette cycled across the tiles. Full static class strings. */
+const palette = [
+  { tile: "bg-[#38bdf8]/10 border-[#38bdf8]/25", icon: "text-[#38bdf8]", hover: "hover:border-[#38bdf8]/45" },
+  { tile: "bg-[#818cf8]/10 border-[#818cf8]/25", icon: "text-[#818cf8]", hover: "hover:border-[#818cf8]/45" },
+  { tile: "bg-[#c084fc]/10 border-[#c084fc]/25", icon: "text-[#c084fc]", hover: "hover:border-[#c084fc]/45" },
+  { tile: "bg-[#34d399]/10 border-[#34d399]/25", icon: "text-[#34d399]", hover: "hover:border-[#34d399]/45" },
+  { tile: "bg-[#fbbf24]/10 border-[#fbbf24]/25", icon: "text-[#fbbf24]", hover: "hover:border-[#fbbf24]/45" },
+  { tile: "bg-[#fb7185]/10 border-[#fb7185]/25", icon: "text-[#fb7185]", hover: "hover:border-[#fb7185]/45" },
+];
+
 export default function WhoWeHelp() {
   return (
     <section
@@ -40,7 +50,7 @@ export default function WhoWeHelp() {
     >
       <div className="max-w-7xl mx-auto">
         <Reveal className="text-center mb-14">
-          <p className="text-chrome text-sm font-semibold uppercase tracking-[0.2em] mb-3">
+          <p className="text-[#38bdf8] text-sm font-semibold uppercase tracking-[0.2em] mb-3">
             Who We Help
           </p>
           <h2 className="text-4xl sm:text-5xl font-extrabold tracking-tight mb-4">
@@ -53,27 +63,32 @@ export default function WhoWeHelp() {
         </Reveal>
 
         <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-6 gap-4">
-          {businesses.map(({ icon: Icon, label }, i) => (
-            <motion.div
-              key={label}
-              initial={{ opacity: 0, y: 16 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true, margin: "-40px" }}
-              transition={{
-                duration: 0.45,
-                delay: (i % 6) * 0.05,
-                ease: [0.22, 1, 0.36, 1],
-              }}
-              className="group flex flex-col items-center gap-3 p-5 rounded-xl panel-chrome transition-all hover:border-chrome/40 hover:-translate-y-1 hover:shadow-[0_10px_30px_rgba(0,0,0,0.4)] cursor-default"
-            >
-              <div className="w-12 h-12 rounded-lg bg-white/[0.04] border border-hairline flex items-center justify-center transition-colors group-hover:bg-white/[0.08]">
-                <Icon className="w-6 h-6 text-chrome" />
-              </div>
-              <span className="text-sm text-gray-300 text-center font-medium">
-                {label}
-              </span>
-            </motion.div>
-          ))}
+          {businesses.map(({ icon: Icon, label }, i) => {
+            const c = palette[i % palette.length];
+            return (
+              <motion.div
+                key={label}
+                initial={{ opacity: 0, y: 16 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true, margin: "-40px" }}
+                transition={{
+                  duration: 0.45,
+                  delay: (i % 6) * 0.05,
+                  ease: [0.22, 1, 0.36, 1],
+                }}
+                className={`group flex flex-col items-center gap-3 p-5 rounded-xl panel-chrome transition-all hover:-translate-y-1 hover:shadow-[0_10px_30px_rgba(0,0,0,0.4)] cursor-default ${c.hover}`}
+              >
+                <div
+                  className={`w-12 h-12 rounded-lg border flex items-center justify-center transition-transform group-hover:scale-110 ${c.tile}`}
+                >
+                  <Icon className={`w-6 h-6 ${c.icon}`} />
+                </div>
+                <span className="text-sm text-gray-300 text-center font-medium">
+                  {label}
+                </span>
+              </motion.div>
+            );
+          })}
         </div>
 
         <Reveal delay={0.15} className="text-center mt-8">

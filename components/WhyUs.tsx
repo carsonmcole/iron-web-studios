@@ -70,7 +70,7 @@ export default function WhyUs() {
     >
       <div className="max-w-7xl mx-auto">
         <Reveal className="text-center mb-14">
-          <p className="text-chrome text-sm font-semibold uppercase tracking-[0.2em] mb-3">
+          <p className="text-[#34d399] text-sm font-semibold uppercase tracking-[0.2em] mb-3">
             Why Iron Web Studios
           </p>
           <h2 className="text-4xl sm:text-5xl font-extrabold tracking-tight mb-4">

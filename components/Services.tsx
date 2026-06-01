@@ -114,7 +114,7 @@ export default function Services() {
     <section id="services" className="py-24 px-4 sm:px-6 lg:px-8 bg-[#0b0d10]">
       <div className="max-w-7xl mx-auto">
         <Reveal className="text-center mb-14">
-          <p className="text-chrome text-sm font-semibold uppercase tracking-[0.2em] mb-3">
+          <p className="text-[#a5b4fc] text-sm font-semibold uppercase tracking-[0.2em] mb-3">
             Packages &amp; Pricing
           </p>
           <h2 className="text-4xl sm:text-5xl font-extrabold tracking-tight mb-4">

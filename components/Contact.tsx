@@ -49,7 +49,7 @@ export default function Contact() {
     <section id="contact" className="py-24 px-4 sm:px-6 lg:px-8 bg-[#0b0d10]">
       <div className="max-w-7xl mx-auto">
         <Reveal className="text-center mb-14">
-          <p className="text-chrome text-sm font-semibold uppercase tracking-[0.2em] mb-3">
+          <p className="text-[#38bdf8] text-sm font-semibold uppercase tracking-[0.2em] mb-3">
             Contact
           </p>
           <h2 className="text-4xl sm:text-5xl font-extrabold tracking-tight mb-4">
@@ -71,8 +71,8 @@ export default function Contact() {
                   href="tel:7068022534"
                   className="flex items-center gap-3 text-gray-300 hover:text-white transition-colors group"
                 >
-                  <div className="w-10 h-10 rounded-lg bg-white/[0.04] border border-hairline flex items-center justify-center transition-colors group-hover:bg-white/[0.08]">
-                    <Phone className="w-5 h-5 text-chrome" />
+                  <div className="w-10 h-10 rounded-lg bg-[#34d399]/10 border border-[#34d399]/25 flex items-center justify-center transition-transform group-hover:scale-110">
+                    <Phone className="w-5 h-5 text-[#34d399]" />
                   </div>
                   <div>
                     <p className="text-xs text-muted mb-0.5">Call or Text</p>
@@ -84,8 +84,8 @@ export default function Contact() {
                   href="mailto:CCOLE@IRONWEBSTUDIOS.COM"
                   className="flex items-center gap-3 text-gray-300 hover:text-white transition-colors group"
                 >
-                  <div className="w-10 h-10 rounded-lg bg-white/[0.04] border border-hairline flex items-center justify-center transition-colors group-hover:bg-white/[0.08]">
-                    <Mail className="w-5 h-5 text-chrome" />
+                  <div className="w-10 h-10 rounded-lg bg-[#38bdf8]/10 border border-[#38bdf8]/25 flex items-center justify-center transition-transform group-hover:scale-110">
+                    <Mail className="w-5 h-5 text-[#38bdf8]" />
                   </div>
                   <div>
                     <p className="text-xs text-muted mb-0.5">Email</p>

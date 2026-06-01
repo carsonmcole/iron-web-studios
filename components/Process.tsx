@@ -8,21 +8,29 @@ const steps = [
     num: "01",
     title: "Free Consultation",
     desc: "Tell us about your business, your goals, and the look you want. No commitment needed — just a quick call or message.",
+    ring: "border-[#38bdf8]/50 group-hover:border-[#38bdf8] group-hover:shadow-[0_0_30px_rgba(56,189,248,0.3)]",
+    num_color: "text-[#38bdf8]",
   },
   {
     num: "02",
     title: "We Build It",
     desc: "We design and develop your site using your branding, content, and photos. You'll see a preview before anything goes live.",
+    ring: "border-[#818cf8]/50 group-hover:border-[#818cf8] group-hover:shadow-[0_0_30px_rgba(129,140,248,0.3)]",
+    num_color: "text-[#818cf8]",
   },
   {
     num: "03",
     title: "You Review & Approve",
     desc: "We share a live preview. You give feedback, we make adjustments. Simple back-and-forth until it's perfect.",
+    ring: "border-[#c084fc]/50 group-hover:border-[#c084fc] group-hover:shadow-[0_0_30px_rgba(192,132,252,0.3)]",
+    num_color: "text-[#c084fc]",
   },
   {
     num: "04",
     title: "Launch Day",
     desc: "We handle the domain setup, hosting, and go-live. Your business is online and ready to be found.",
+    ring: "border-[#34d399]/50 group-hover:border-[#34d399] group-hover:shadow-[0_0_30px_rgba(52,211,153,0.3)]",
+    num_color: "text-[#34d399]",
   },
 ];
 
@@ -31,7 +39,7 @@ export default function Process() {
     <section id="process" className="py-24 px-4 sm:px-6 lg:px-8 bg-[#0b0d10]">
       <div className="max-w-7xl mx-auto">
         <Reveal className="text-center mb-14">
-          <p className="text-chrome text-sm font-semibold uppercase tracking-[0.2em] mb-3">
+          <p className="text-[#fbbf24] text-sm font-semibold uppercase tracking-[0.2em] mb-3">
             How It Works
           </p>
           <h2 className="text-4xl sm:text-5xl font-extrabold tracking-tight mb-4">
@@ -62,9 +70,11 @@ export default function Process() {
                 className="group relative flex flex-col items-center text-center"
               >
                 {/* Step number circle */}
-                <div className="relative z-10 w-24 h-24 rounded-full bg-[#0b0d10] border border-chrome/40 flex items-center justify-center mb-6 transition-all group-hover:border-chrome group-hover:shadow-[0_0_30px_rgba(192,198,208,0.25)]">
+                <div
+                  className={`relative z-10 w-24 h-24 rounded-full bg-[#0b0d10] border flex items-center justify-center mb-6 transition-all ${step.ring}`}
+                >
                   <div className="w-16 h-16 rounded-full bg-white/[0.04] border border-hairline flex items-center justify-center">
-                    <span className="text-2xl font-extrabold text-chrome">
+                    <span className={`text-2xl font-extrabold ${step.num_color}`}>
                       {step.num}
                     </span>
                   </div>

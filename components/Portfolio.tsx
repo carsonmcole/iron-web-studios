@@ -13,6 +13,13 @@ const placeholders = [
   { label: "Restaurant", tag: "Premium" },
 ];
 
+/** Tag colors matched to the pricing tiers. */
+const tagColors: Record<string, string> = {
+  Starter: "bg-[#38bdf8]/10 border-[#38bdf8]/30 text-[#7dd3fc]",
+  Professional: "bg-[#818cf8]/10 border-[#818cf8]/30 text-[#a5b4fc]",
+  Premium: "bg-[#c084fc]/10 border-[#c084fc]/30 text-[#d8b4fe]",
+};
+
 export default function Portfolio() {
   return (
     <section
@@ -21,7 +28,7 @@ export default function Portfolio() {
     >
       <div className="max-w-7xl mx-auto">
         <Reveal className="text-center mb-14">
-          <p className="text-chrome text-sm font-semibold uppercase tracking-[0.2em] mb-3">
+          <p className="text-[#d8b4fe] text-sm font-semibold uppercase tracking-[0.2em] mb-3">
             Portfolio
           </p>
           <h2 className="text-4xl sm:text-5xl font-extrabold tracking-tight mb-4">
@@ -67,7 +74,9 @@ export default function Portfolio() {
                 <span className="text-white font-semibold text-sm">
                   {item.label}
                 </span>
-                <span className="text-xs px-2 py-0.5 rounded-full font-medium bg-white/[0.06] border border-hairline text-chrome">
+                <span
+                  className={`text-xs px-2 py-0.5 rounded-full font-medium border ${tagColors[item.tag]}`}
+                >
                   {item.tag}
                 </span>
               </div>
