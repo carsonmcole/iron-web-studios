@@ -21,7 +21,7 @@ const plans = [
       "Social media links",
       "Basic on-page SEO",
       "Delivered in 5–7 days",
-      "1 round of revisions",
+      "Monthly revisions",
       "Hosting & maintenance included",
     ],
     cta: "Get Started",
@@ -46,7 +46,7 @@ const plans = [
       "Blog-ready (optional)",
       "Social media integration",
       "Delivered in 10–14 days",
-      "3 rounds of revisions",
+      "Weekly revisions",
       "Hosting, maintenance & updates",
     ],
     cta: "Most Popular",
@@ -63,6 +63,7 @@ const plans = [
     color: "purple",
     features: [
       "Everything in Professional",
+      "Unlimited pages",
       "AI chatbot (answers FAQs, captures leads)",
       "Online booking / appointment integration",
       "Automated follow-up emails",
@@ -70,8 +71,7 @@ const plans = [
       "Google Business Profile optimization",
       "Priority support (48-hr response)",
       "Monthly check-in call",
-      "Delivered in 14–21 days",
-      "Unlimited revisions (30 days)",
+      "Daily revisions",
       "Hosting, AI maintenance & automation",
     ],
     cta: "Go Premium",
@@ -126,7 +126,7 @@ export default function Services() {
           </p>
         </motion.div>
 
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-6 items-start">
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-6 items-stretch">
           {plans.map((plan, i) => {
             const c = colorMap[plan.color as keyof typeof colorMap];
             const Icon = plan.icon;
@@ -137,7 +137,7 @@ export default function Services() {
                 whileInView={{ opacity: 1 }}
                 viewport={{ once: true }}
                 transition={{ duration: 0.5, delay: i * 0.1, ease: "easeOut" }}
-                className={`relative rounded-2xl border bg-white/3 p-8 flex flex-col gap-6 transition-all ${c.border} ${
+                className={`relative h-full rounded-2xl border bg-white/3 p-8 flex flex-col gap-6 transition-all ${c.border} ${
                   plan.popular ? "shadow-2xl shadow-orange-500/10 scale-[1.02]" : ""
                 }`}
               >
