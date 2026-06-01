@@ -33,10 +33,10 @@ export default function Hero() {
             transition={{ duration: 0.6, delay: 0.1, ease: "easeOut" }}
             className="text-5xl sm:text-6xl lg:text-7xl font-extrabold tracking-tight leading-tight mb-6"
           >
-            Your Business Deserves
+            Your Business.
             <br />
             <span className="text-transparent bg-clip-text bg-gradient-to-r from-orange-400 to-orange-500">
-              a Great Website.
+              Your Website.
             </span>
           </motion.h1>
 
