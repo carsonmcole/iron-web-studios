@@ -1,7 +1,8 @@
 "use client";
 
 import { useState, useEffect } from "react";
-import { Menu, X, Hammer } from "lucide-react";
+import { Menu, X } from "lucide-react";
+import Logo from "./Logo";
 
 const links = [
   { label: "Who We Help", href: "#who-we-help" },
@@ -26,36 +27,30 @@ export default function Nav() {
     <header
       className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
         scrolled || open
-          ? "bg-[#0b0f1a]/95 backdrop-blur-md border-b border-white/5 shadow-lg"
-          : "bg-transparent"
+          ? "bg-[#0b0d10]/85 backdrop-blur-xl border-b border-hairline shadow-[0_8px_30px_rgba(0,0,0,0.5)]"
+          : "bg-transparent border-b border-transparent"
       }`}
     >
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="flex items-center justify-between h-16">
-          {/* Logo */}
-          <a href="#" className="flex items-center gap-2 group">
-            <div className="w-8 h-8 bg-orange-500 rounded flex items-center justify-center">
-              <Hammer className="w-4 h-4 text-white" />
-            </div>
-            <span className="font-bold text-lg tracking-tight">
-              Iron <span className="text-orange-500">Web</span> Studios
-            </span>
+        <div className="flex items-center justify-between h-20">
+          <a href="#" className="group transition-transform hover:scale-[1.02]">
+            <Logo size={34} />
           </a>
 
           {/* Desktop links */}
-          <nav className="hidden md:flex items-center gap-6">
+          <nav className="hidden md:flex items-center gap-7">
             {links.map((l) => (
               <a
                 key={l.href}
                 href={l.href}
-                className="text-sm text-gray-400 hover:text-white transition-colors"
+                className="relative text-sm text-muted hover:text-white transition-colors after:absolute after:left-0 after:-bottom-1.5 after:h-px after:w-0 after:bg-chrome after:transition-all hover:after:w-full"
               >
                 {l.label}
               </a>
             ))}
             <a
               href="#contact"
-              className="ml-2 px-4 py-2 bg-orange-500 hover:bg-orange-400 text-white text-sm font-semibold rounded-lg transition-colors"
+              className="ml-1 px-4 py-2 rounded-lg bg-gradient-to-b from-[#f2f4f8] to-[#c0c6d0] text-[#0b0d10] text-sm font-bold transition-all hover:shadow-[0_0_24px_rgba(192,198,208,0.35)] hover:-translate-y-0.5"
             >
               Get a Free Quote
             </a>
@@ -64,7 +59,7 @@ export default function Nav() {
           {/* Mobile menu button */}
           <button
             type="button"
-            className="md:hidden flex items-center justify-center w-11 h-11 rounded-lg text-gray-400 hover:text-white hover:bg-white/5 active:bg-white/10 transition-colors cursor-pointer"
+            className="md:hidden flex items-center justify-center w-11 h-11 rounded-lg text-muted hover:text-white hover:bg-white/5 active:bg-white/10 transition-colors cursor-pointer"
             onClick={() => setOpen(!open)}
             aria-label="Toggle menu"
             style={{ touchAction: "manipulation" }}
@@ -76,7 +71,7 @@ export default function Nav() {
 
       {/* Mobile menu */}
       {open && (
-        <div className="md:hidden border-t border-white/5">
+        <div className="md:hidden border-t border-hairline bg-[#0b0d10]/95 backdrop-blur-xl">
           <nav className="px-4 py-5 flex flex-col gap-1">
             {links.map((l) => (
               <a
@@ -91,7 +86,7 @@ export default function Nav() {
             <a
               href="#contact"
               onClick={() => setOpen(false)}
-              className="mt-3 px-4 py-3 bg-orange-500 hover:bg-orange-400 text-white text-sm font-semibold rounded-xl text-center transition-colors"
+              className="mt-3 px-4 py-3 rounded-xl bg-gradient-to-b from-[#f2f4f8] to-[#c0c6d0] text-[#0b0d10] text-sm font-bold text-center"
             >
               Get a Free Quote
             </a>

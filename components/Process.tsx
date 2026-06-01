@@ -1,6 +1,7 @@
 "use client";
 
 import { motion } from "framer-motion";
+import Reveal from "./Reveal";
 
 const steps = [
   {
@@ -27,70 +28,62 @@ const steps = [
 
 export default function Process() {
   return (
-    <section id="process" className="py-24 px-4 sm:px-6 lg:px-8 bg-[#0b0f1a]">
+    <section id="process" className="py-24 px-4 sm:px-6 lg:px-8 bg-[#0b0d10]">
       <div className="max-w-7xl mx-auto">
-        <motion.div
-          initial={{ opacity: 0 }}
-          whileInView={{ opacity: 1 }}
-          viewport={{ once: true }}
-          transition={{ duration: 0.6, ease: "easeOut" }}
-          className="text-center mb-14"
-        >
-          <p className="text-orange-500 text-sm font-semibold uppercase tracking-widest mb-3">
+        <Reveal className="text-center mb-14">
+          <p className="text-chrome text-sm font-semibold uppercase tracking-[0.2em] mb-3">
             How It Works
           </p>
           <h2 className="text-4xl sm:text-5xl font-extrabold tracking-tight mb-4">
             From Idea to Online in 4 Steps
           </h2>
-          <p className="text-gray-400 text-lg max-w-xl mx-auto">
+          <p className="text-muted text-lg max-w-xl mx-auto">
             We keep the process dead simple so you can focus on running your
             business while we handle the website.
           </p>
-        </motion.div>
+        </Reveal>
 
         <div className="relative">
           {/* Connecting line */}
-          <div className="hidden lg:block absolute top-12 left-[12.5%] right-[12.5%] h-px bg-gradient-to-r from-transparent via-orange-500/30 to-transparent" />
+          <div className="hidden lg:block absolute top-12 left-[12.5%] right-[12.5%] h-px bg-gradient-to-r from-transparent via-chrome/40 to-transparent" />
 
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8">
             {steps.map((step, i) => (
               <motion.div
                 key={step.num}
-                initial={{ opacity: 0 }}
-                whileInView={{ opacity: 1 }}
-                viewport={{ once: true }}
-                transition={{ duration: 0.5, delay: i * 0.1, ease: "easeOut" }}
-                className="relative flex flex-col items-center text-center"
+                initial={{ opacity: 0, y: 24 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true, margin: "-60px" }}
+                transition={{
+                  duration: 0.5,
+                  delay: i * 0.12,
+                  ease: [0.22, 1, 0.36, 1],
+                }}
+                className="group relative flex flex-col items-center text-center"
               >
                 {/* Step number circle */}
-                <div className="relative z-10 w-24 h-24 rounded-full bg-[#0b0f1a] border-2 border-orange-500/40 flex items-center justify-center mb-6">
-                  <div className="w-16 h-16 rounded-full bg-orange-500/10 flex items-center justify-center">
-                    <span className="text-2xl font-extrabold text-orange-400">
+                <div className="relative z-10 w-24 h-24 rounded-full bg-[#0b0d10] border border-chrome/40 flex items-center justify-center mb-6 transition-all group-hover:border-chrome group-hover:shadow-[0_0_30px_rgba(192,198,208,0.25)]">
+                  <div className="w-16 h-16 rounded-full bg-white/[0.04] border border-hairline flex items-center justify-center">
+                    <span className="text-2xl font-extrabold text-chrome">
                       {step.num}
                     </span>
                   </div>
                 </div>
                 <h3 className="text-lg font-bold mb-2">{step.title}</h3>
-                <p className="text-gray-400 text-sm leading-relaxed">{step.desc}</p>
+                <p className="text-muted text-sm leading-relaxed">{step.desc}</p>
               </motion.div>
             ))}
           </div>
         </div>
 
-        <motion.div
-          initial={{ opacity: 0 }}
-          whileInView={{ opacity: 1 }}
-          viewport={{ once: true }}
-          transition={{ duration: 0.5, delay: 0.4, ease: "easeOut" }}
-          className="mt-14 text-center"
-        >
+        <Reveal delay={0.2} className="mt-14 text-center">
           <a
             href="#contact"
-            className="inline-flex items-center justify-center gap-2 px-8 py-4 bg-orange-500 hover:bg-orange-400 text-white font-bold rounded-xl transition-all hover:scale-105 hover:shadow-lg hover:shadow-orange-500/25"
+            className="inline-flex items-center justify-center gap-2 px-8 py-4 rounded-xl bg-gradient-to-b from-[#f2f4f8] to-[#c0c6d0] text-[#0b0d10] font-bold transition-all hover:-translate-y-0.5 hover:shadow-[0_0_36px_rgba(192,198,208,0.35)]"
           >
             Start with a Free Consultation
           </a>
-        </motion.div>
+        </Reveal>
       </div>
     </section>
   );

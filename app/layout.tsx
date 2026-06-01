@@ -121,7 +121,7 @@ export default function RootLayout({
       lang="en"
       className={`${geistSans.variable} ${geistMono.variable} antialiased`}
     >
-      <body className="min-h-full flex flex-col bg-[#0b0f1a] text-[#e8eaf0]">
+      <body className="min-h-full flex flex-col bg-[#0b0d10] text-[#f0f2f5]">
         <script
           type="application/ld+json"
           dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
