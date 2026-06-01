@@ -16,31 +16,49 @@ const reasons = [
     icon: Clock,
     title: "Fast Turnaround",
     desc: "Fast delivery without sacrificing quality. No waiting months for an agency to \"get to you.\"",
+    tile: "bg-[#38bdf8]/10 border-[#38bdf8]/25",
+    iconColor: "text-[#38bdf8]",
+    hover: "hover:border-[#38bdf8]/40",
   },
   {
     icon: Smartphone,
     title: "Mobile-First Design",
     desc: "Over 70% of local searches happen on phones. Every site we build looks perfect on any screen.",
+    tile: "bg-[#c084fc]/10 border-[#c084fc]/25",
+    iconColor: "text-[#c084fc]",
+    hover: "hover:border-[#c084fc]/40",
   },
   {
     icon: SearchCheck,
     title: "Built for Local SEO",
     desc: "We optimize every page so your business shows up when people search Google in your area.",
+    tile: "bg-[#34d399]/10 border-[#34d399]/25",
+    iconColor: "text-[#34d399]",
+    hover: "hover:border-[#34d399]/40",
   },
   {
     icon: DollarSign,
     title: "No Agency Markups",
     desc: "You're working directly with the builder — which means better communication and lower prices.",
+    tile: "bg-[#fbbf24]/10 border-[#fbbf24]/25",
+    iconColor: "text-[#fbbf24]",
+    hover: "hover:border-[#fbbf24]/40",
   },
   {
     icon: HeadphonesIcon,
     title: "Real Support",
     desc: "After launch, you can actually reach us. No ticket queues, no chatbots — just a real person.",
+    tile: "bg-[#818cf8]/10 border-[#818cf8]/25",
+    iconColor: "text-[#818cf8]",
+    hover: "hover:border-[#818cf8]/40",
   },
   {
     icon: TrendingUp,
     title: "Designed to Convert",
     desc: "Our sites aren't just pretty — they're structured to turn visitors into phone calls and customers.",
+    tile: "bg-[#fb7185]/10 border-[#fb7185]/25",
+    iconColor: "text-[#fb7185]",
+    hover: "hover:border-[#fb7185]/40",
   },
 ];
 
@@ -65,7 +83,7 @@ export default function WhyUs() {
         </Reveal>
 
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
-          {reasons.map(({ icon: Icon, title, desc }, i) => (
+          {reasons.map(({ icon: Icon, title, desc, tile, iconColor, hover }, i) => (
             <motion.div
               key={title}
               initial={{ opacity: 0, y: 24 }}
@@ -76,13 +94,13 @@ export default function WhyUs() {
                 delay: (i % 3) * 0.08,
                 ease: [0.22, 1, 0.36, 1],
               }}
-              className="group relative p-6 rounded-2xl panel-chrome transition-all hover:-translate-y-1 hover:border-chrome/40 hover:shadow-[0_14px_40px_rgba(0,0,0,0.4)] overflow-hidden"
+              className={`group relative p-6 rounded-2xl panel-chrome transition-all hover:-translate-y-1 hover:shadow-[0_14px_40px_rgba(0,0,0,0.4)] overflow-hidden ${hover}`}
             >
-              {/* hover sheen */}
-              <div className="absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity bg-[radial-gradient(circle_at_top_left,rgba(192,198,208,0.08),transparent_50%)]" />
               <div className="relative">
-                <div className="w-12 h-12 rounded-xl bg-white/[0.04] border border-hairline flex items-center justify-center mb-4 transition-colors group-hover:bg-white/[0.08]">
-                  <Icon className="w-6 h-6 text-chrome" />
+                <div
+                  className={`w-12 h-12 rounded-xl border flex items-center justify-center mb-4 transition-transform group-hover:scale-110 ${tile}`}
+                >
+                  <Icon className={`w-6 h-6 ${iconColor}`} />
                 </div>
                 <h3 className="text-lg font-bold mb-2">{title}</h3>
                 <p className="text-muted text-sm leading-relaxed">{desc}</p>

@@ -36,11 +36,14 @@ export default function Hero() {
               className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full panel-chrome text-sm font-medium mb-6"
             >
               <span className="relative flex h-2 w-2">
-                <span className="absolute inline-flex h-full w-full rounded-full bg-chrome opacity-60 animate-ping" />
-                <span className="relative inline-flex h-2 w-2 rounded-full bg-chrome" />
+                <span className="absolute inline-flex h-full w-full rounded-full bg-[#34d399] opacity-70 animate-ping" />
+                <span className="relative inline-flex h-2 w-2 rounded-full bg-[#34d399]" />
               </span>
               <span className="text-muted">
-                Now accepting new clients — let&apos;s chat!
+                <span className="text-[#6ee7b7] font-semibold">
+                  Now accepting new clients
+                </span>{" "}
+                — let&apos;s chat!
               </span>
             </motion.div>
 
