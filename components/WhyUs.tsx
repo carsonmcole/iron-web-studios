@@ -14,7 +14,7 @@ const reasons = [
   {
     icon: Clock,
     title: "Fast Turnaround",
-    desc: "Most sites go live in 7–14 days. No waiting months for an agency to \"get to you.\"",
+    desc: "Fast delivery without sacrificing quality. No waiting months for an agency to \"get to you.\"",
   },
   {
     icon: Smartphone,
