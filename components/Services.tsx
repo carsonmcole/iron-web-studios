@@ -7,7 +7,7 @@ const plans = [
   {
     icon: Zap,
     name: "Starter",
-    setup: "$299",
+    setup: "$499",
     monthly: "$49",
     subtitle: "One-Page Website",
     description:
@@ -30,8 +30,8 @@ const plans = [
   {
     icon: Star,
     name: "Professional",
-    setup: "$799",
-    monthly: "$99",
+    setup: "$999",
+    monthly: "$89",
     subtitle: "Multi-Page Website",
     description:
       "A full website that builds trust, ranks on Google, and converts visitors into paying customers.",
@@ -55,8 +55,8 @@ const plans = [
   {
     icon: Rocket,
     name: "Premium",
-    setup: "$1,499",
-    monthly: "$199",
+    setup: "$1,799",
+    monthly: "$149",
     subtitle: "Full AI-Powered Site",
     description:
       "Everything in Professional, plus an AI chatbot and automation tools so your site works for you 24/7.",
