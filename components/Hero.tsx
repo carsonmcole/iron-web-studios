@@ -5,7 +5,7 @@ import { motion } from "framer-motion";
 
 const bullets = [
   "Mobile-first, fast-loading websites",
-  "Delivered in 7–14 days",
+  "Fast delivery without sacrificing quality",
   "Built for local search (SEO)",
   "Email/SMS automation & AI chatbot options",
 ];
