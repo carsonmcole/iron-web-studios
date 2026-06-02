@@ -67,7 +67,7 @@ export default function Process() {
                   delay: i * 0.12,
                   ease: "easeOut",
                 }}
-                className="group relative flex flex-col items-center text-center"
+                className="gpu-stable group relative flex flex-col items-center text-center"
               >
                 {/* Step number circle */}
                 <div

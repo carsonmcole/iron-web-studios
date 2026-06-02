@@ -17,7 +17,7 @@ type RevealProps = {
 export default function Reveal({ children, className, delay = 0 }: RevealProps) {
   return (
     <motion.div
-      className={className}
+      className={`gpu-stable ${className ?? ""}`}
       initial={{ opacity: 0 }}
       whileInView={{ opacity: 1 }}
       viewport={{ once: true, margin: "-80px" }}

@@ -42,6 +42,18 @@ html {
 
 /* ---- Chrome / steel utilities ---- */
 
+/* Keep faded-in elements on a permanent compositing layer so Safari/iOS
+   doesn't repaint ("blink") when framer-motion drops its will-change hint
+   at the end of the opacity animation. translateZ(0) is static — and in
+   Tailwind v4 the translate/scale utilities use separate CSS properties,
+   so hover transforms still work alongside it. */
+.gpu-stable {
+  transform: translateZ(0);
+  -webkit-transform: translateZ(0);
+  backface-visibility: hidden;
+  -webkit-backface-visibility: hidden;
+}
+
 /* Brushed-metal text fill */
 .chrome-text {
   background: linear-gradient(

@@ -33,7 +33,7 @@ export default function Hero() {
           <div>
             <motion.div
               {...fade(0)}
-              className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full panel-chrome text-sm font-medium mb-6"
+              className="gpu-stable inline-flex items-center gap-2 px-3 py-1.5 rounded-full panel-chrome text-sm font-medium mb-6"
             >
               <span className="relative flex h-2 w-2">
                 <span className="absolute inline-flex h-full w-full rounded-full bg-[#34d399] opacity-70 animate-ping" />
@@ -49,7 +49,7 @@ export default function Hero() {
 
             <motion.h1
               {...fade(0.1)}
-              className="text-5xl sm:text-6xl lg:text-7xl font-extrabold tracking-tight leading-[1.05] mb-6"
+              className="gpu-stable text-5xl sm:text-6xl lg:text-7xl font-extrabold tracking-tight leading-[1.05] mb-6"
             >
               Your Business.
               <br />
@@ -58,7 +58,7 @@ export default function Hero() {
 
             <motion.p
               {...fade(0.2)}
-              className="text-lg sm:text-xl text-muted max-w-2xl mb-8 leading-relaxed"
+              className="gpu-stable text-lg sm:text-xl text-muted max-w-2xl mb-8 leading-relaxed"
             >
               We build fast, good-looking websites for local businesses —
               barbers, plumbers, landscapers, HVAC, and more. Friendly service,
@@ -67,7 +67,7 @@ export default function Hero() {
 
             <motion.ul
               {...fade(0.3)}
-              className="grid grid-cols-1 sm:grid-cols-2 gap-2.5 mb-10"
+              className="gpu-stable grid grid-cols-1 sm:grid-cols-2 gap-2.5 mb-10"
             >
               {bullets.map((b) => (
                 <li
@@ -82,7 +82,7 @@ export default function Hero() {
 
             <motion.div
               {...fade(0.4)}
-              className="flex flex-col sm:flex-row gap-4"
+              className="gpu-stable flex flex-col sm:flex-row gap-4"
             >
               <a
                 href="#contact"

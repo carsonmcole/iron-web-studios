@@ -141,7 +141,7 @@ export default function Services() {
                   delay: i * 0.1,
                   ease: "easeOut",
                 }}
-                className={`group relative h-full rounded-2xl p-8 flex flex-col gap-6 transition-all hover:-translate-y-1.5 ${a.card}`}
+                className={`gpu-stable group relative h-full rounded-2xl p-8 flex flex-col gap-6 transition-all hover:-translate-y-1.5 ${a.card}`}
               >
                 {plan.popular && "pill" in a && (
                   <div

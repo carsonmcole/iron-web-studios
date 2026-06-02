@@ -76,7 +76,7 @@ export default function WhoWeHelp() {
                   delay: (i % 6) * 0.05,
                   ease: "easeOut",
                 }}
-                className={`group flex flex-col items-center gap-3 p-5 rounded-xl panel-chrome transition-all hover:-translate-y-1 hover:shadow-[0_10px_30px_rgba(0,0,0,0.4)] cursor-default ${c.hover}`}
+                className={`gpu-stable group flex flex-col items-center gap-3 p-5 rounded-xl panel-chrome transition-all hover:-translate-y-1 hover:shadow-[0_10px_30px_rgba(0,0,0,0.4)] cursor-default ${c.hover}`}
               >
                 <div
                   className={`w-12 h-12 rounded-lg border flex items-center justify-center transition-transform group-hover:scale-110 ${c.tile}`}

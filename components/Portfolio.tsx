@@ -53,7 +53,7 @@ export default function Portfolio() {
                 delay: (i % 3) * 0.08,
                 ease: "easeOut",
               }}
-              className="group relative rounded-2xl border border-hairline overflow-hidden bg-gradient-to-br from-white/[0.05] to-transparent aspect-video flex flex-col items-center justify-center gap-3 transition-all hover:border-chrome/40 hover:-translate-y-1"
+              className="gpu-stable group relative rounded-2xl border border-hairline overflow-hidden bg-gradient-to-br from-white/[0.05] to-transparent aspect-video flex flex-col items-center justify-center gap-3 transition-all hover:border-chrome/40 hover:-translate-y-1"
             >
               {/* Mock browser chrome */}
               <div className="absolute top-0 left-0 right-0 h-8 bg-black/40 border-b border-hairline flex items-center px-3 gap-1.5">
