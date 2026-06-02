@@ -45,13 +45,13 @@ export default function Portfolio() {
           {placeholders.map((item, i) => (
             <motion.div
               key={item.label}
-              initial={{ opacity: 0, scale: 0.96 }}
-              whileInView={{ opacity: 1, scale: 1 }}
+              initial={{ opacity: 0 }}
+              whileInView={{ opacity: 1 }}
               viewport={{ once: true, margin: "-50px" }}
               transition={{
                 duration: 0.5,
                 delay: (i % 3) * 0.08,
-                ease: [0.22, 1, 0.36, 1],
+                ease: "easeOut",
               }}
               className="group relative rounded-2xl border border-hairline overflow-hidden bg-gradient-to-br from-white/[0.05] to-transparent aspect-video flex flex-col items-center justify-center gap-3 transition-all hover:border-chrome/40 hover:-translate-y-1"
             >

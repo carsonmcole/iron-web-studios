@@ -7,24 +7,21 @@ type RevealProps = {
   children: ReactNode;
   className?: string;
   delay?: number;
-  /** direction the content rises/slides in from */
-  y?: number;
 };
 
-/** Shared scroll-into-view reveal: subtle rise + fade, fires once. */
-export default function Reveal({
-  children,
-  className,
-  delay = 0,
-  y = 24,
-}: RevealProps) {
+/**
+ * Shared scroll-into-view reveal: fade only, fires once.
+ * Opacity-only (no transform) to avoid the GPU-layer teardown flicker
+ * Safari/mobile shows when an animated transform is removed.
+ */
+export default function Reveal({ children, className, delay = 0 }: RevealProps) {
   return (
     <motion.div
       className={className}
-      initial={{ opacity: 0, y }}
-      whileInView={{ opacity: 1, y: 0 }}
+      initial={{ opacity: 0 }}
+      whileInView={{ opacity: 1 }}
       viewport={{ once: true, margin: "-80px" }}
-      transition={{ duration: 0.6, delay, ease: [0.22, 1, 0.36, 1] }}
+      transition={{ duration: 0.6, delay, ease: "easeOut" }}
     >
       {children}
     </motion.div>

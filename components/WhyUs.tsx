@@ -86,13 +86,13 @@ export default function WhyUs() {
           {reasons.map(({ icon: Icon, title, desc, tile, iconColor, hover }, i) => (
             <motion.div
               key={title}
-              initial={{ opacity: 0, y: 24 }}
-              whileInView={{ opacity: 1, y: 0 }}
+              initial={{ opacity: 0 }}
+              whileInView={{ opacity: 1 }}
               viewport={{ once: true, margin: "-60px" }}
               transition={{
                 duration: 0.55,
                 delay: (i % 3) * 0.08,
-                ease: [0.22, 1, 0.36, 1],
+                ease: "easeOut",
               }}
               className={`group relative p-6 rounded-2xl panel-chrome transition-all hover:-translate-y-1 hover:shadow-[0_14px_40px_rgba(0,0,0,0.4)] overflow-hidden ${hover}`}
             >

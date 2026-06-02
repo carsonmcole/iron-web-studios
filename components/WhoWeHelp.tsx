@@ -68,13 +68,13 @@ export default function WhoWeHelp() {
             return (
               <motion.div
                 key={label}
-                initial={{ opacity: 0, y: 16 }}
-                whileInView={{ opacity: 1, y: 0 }}
+                initial={{ opacity: 0 }}
+                whileInView={{ opacity: 1 }}
                 viewport={{ once: true, margin: "-40px" }}
                 transition={{
                   duration: 0.45,
                   delay: (i % 6) * 0.05,
-                  ease: [0.22, 1, 0.36, 1],
+                  ease: "easeOut",
                 }}
                 className={`group flex flex-col items-center gap-3 p-5 rounded-xl panel-chrome transition-all hover:-translate-y-1 hover:shadow-[0_10px_30px_rgba(0,0,0,0.4)] cursor-default ${c.hover}`}
               >

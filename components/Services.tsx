@@ -133,13 +133,13 @@ export default function Services() {
             return (
               <motion.div
                 key={plan.name}
-                initial={{ opacity: 0, y: 28 }}
-                whileInView={{ opacity: 1, y: 0 }}
+                initial={{ opacity: 0 }}
+                whileInView={{ opacity: 1 }}
                 viewport={{ once: true, margin: "-60px" }}
                 transition={{
                   duration: 0.6,
                   delay: i * 0.1,
-                  ease: [0.22, 1, 0.36, 1],
+                  ease: "easeOut",
                 }}
                 className={`group relative h-full rounded-2xl p-8 flex flex-col gap-6 transition-all hover:-translate-y-1.5 ${a.card}`}
               >

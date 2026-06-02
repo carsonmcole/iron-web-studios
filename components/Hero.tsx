@@ -12,9 +12,9 @@ const bullets = [
 ];
 
 const fade = (delay: number) => ({
-  initial: { opacity: 0, y: 24 },
-  animate: { opacity: 1, y: 0 },
-  transition: { duration: 0.7, delay, ease: [0.22, 1, 0.36, 1] as const },
+  initial: { opacity: 0 },
+  animate: { opacity: 1 },
+  transition: { duration: 0.7, delay, ease: "easeOut" as const },
 });
 
 export default function Hero() {
@@ -102,9 +102,9 @@ export default function Hero() {
 
           {/* Logo showcase */}
           <motion.div
-            initial={{ opacity: 0, scale: 0.85 }}
-            animate={{ opacity: 1, scale: 1 }}
-            transition={{ duration: 0.9, delay: 0.25, ease: [0.22, 1, 0.36, 1] }}
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            transition={{ duration: 0.9, delay: 0.25, ease: "easeOut" }}
             className="relative hidden lg:flex items-center justify-center"
           >
             <div className="relative animate-float">
