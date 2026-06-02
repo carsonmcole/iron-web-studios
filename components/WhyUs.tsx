@@ -94,7 +94,7 @@ export default function WhyUs() {
                 delay: (i % 3) * 0.08,
                 ease: "easeOut",
               }}
-              className={`gpu-stable group relative p-6 rounded-2xl panel-chrome transition-all hover:-translate-y-1 hover:shadow-[0_14px_40px_rgba(0,0,0,0.4)] overflow-hidden ${hover}`}
+              className={`gpu-stable group relative p-6 rounded-2xl panel-chrome transition-[transform,translate,box-shadow,border-color,background-color] duration-300 hover:-translate-y-1 hover:shadow-[0_14px_40px_rgba(0,0,0,0.4)] overflow-hidden ${hover}`}
             >
               <div className="relative">
                 <div
