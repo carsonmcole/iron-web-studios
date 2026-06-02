@@ -6,7 +6,7 @@ import WhoWeHelp from "@/components/WhoWeHelp";
 import Services from "@/components/Services";
 import WhyUs from "@/components/WhyUs";
 import Process from "@/components/Process";
-import Portfolio from "@/components/Portfolio";
+// import Portfolio from "@/components/Portfolio"; // hidden until we have work to show
 import Contact from "@/components/Contact";
 import Footer from "@/components/Footer";
 
@@ -19,7 +19,7 @@ export default function Home() {
       <Services />
       <WhyUs />
       <Process />
-      <Portfolio />
+      {/* <Portfolio /> */}
       <Contact />
       <Footer />
     </main>
