@@ -38,8 +38,8 @@ const plans = [
     icon: Zap,
     name: "Starter",
     accent: accents.sky,
-    setup: "$499",
-    monthly: "$49",
+    setup: "~$499",
+    monthly: "~$49",
     subtitle: "One-Page Website",
     description:
       "Everything a small local business needs to look professional online — done right, and done fast.",
@@ -61,8 +61,8 @@ const plans = [
     icon: Star,
     name: "Professional",
     accent: accents.indigo,
-    setup: "$999",
-    monthly: "$99",
+    setup: "~$999",
+    monthly: "~$99",
     subtitle: "Multi-Page Website",
     description:
       "A full website that builds trust, ranks on Google, and converts visitors into paying customers.",
@@ -86,8 +86,8 @@ const plans = [
     icon: Rocket,
     name: "Premium",
     accent: accents.violet,
-    setup: "$2,499",
-    monthly: "$149",
+    setup: "~$2,499",
+    monthly: "~$149",
     subtitle: "Full AI-Powered Site",
     description:
       "Everything in Professional, plus an AI chatbot and automation tools so your site works for you 24/7.",
@@ -121,8 +121,8 @@ export default function Services() {
             Simple, Transparent Pricing
           </h2>
           <p className="text-muted text-lg max-w-xl mx-auto">
-            No hidden fees. No hourly surprises. Pick the package that fits your
-            business and budget.
+            Typical pricing — no hidden fees, no hourly surprises. Pick the
+            package that fits your business and budget.
           </p>
         </Reveal>
 
