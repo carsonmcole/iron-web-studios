@@ -51,9 +51,9 @@ export default function Hero() {
               {...fade(0.1)}
               className="gpu-stable text-5xl sm:text-6xl lg:text-7xl font-extrabold tracking-tight leading-[1.05] mb-6"
             >
-              Your Business.
+              We Build.
               <br />
-              <span className="chrome-shimmer">Your Website.</span>
+              <span className="chrome-shimmer">You Close.</span>
             </motion.h1>
 
             <motion.p
